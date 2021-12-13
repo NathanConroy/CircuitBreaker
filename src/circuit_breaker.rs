@@ -18,9 +18,19 @@ pub fn build_cb() -> CircuitBreaker {
     }
 }
 
+impl CircuitBreaker {
+    pub fn tell_state(self) {
+        match self.state {
+            State::Open => println!("I'm open"),
+            State::Closed => println!("I'm closed"),
+        }
+    }
+}
+
 
 pub fn run() {
-    println!("Hello!");
+    let cb = build_cb();
+    cb.tell_state();
 }
 
 
