@@ -4,7 +4,10 @@ FORCE:
 dev_build:
 	cargo build
 
-prod: FORCE
+tests: FORCE
+	cargo test
+
+prod: tests
 	git commit -a
 	git push origin main
 

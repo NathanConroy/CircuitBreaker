@@ -1,3 +1,6 @@
+
+mod circuit_breaker;
+
 fn main() {
-    println!("Hello, world!");
+    circuit_breaker::run();
 }
